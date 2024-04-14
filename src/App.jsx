@@ -1,5 +1,6 @@
 import { Hero, PopularProducts, SuperQuality, Services, SpecialOffer, CustomerReviews, Subscribe, Footer} from './sections';
 import Nav from './Components/Nav';
+import { navLinks } from './Constants';
 
 
 const App = () => (
