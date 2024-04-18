@@ -1,18 +1,33 @@
 import Button from "../Components/Button"
 import { arrowRight } from "../assets/icons"
+import {statistics} from "../Constants"
+import { bigShoe1 } from "../assets/images"
 
 const hero = () => {
   return (
     <section id="home" className="w-full flex xl:flex-row flex-col min-h-screen max-container p-2 gap-10">
       <div className="relative flex flex-col w-full xl:w-2/5 justify-center items-start max-xl:padding-x pt-28 ">
-        <p>Our Summer Collection</p>
-        <h1>
-          <span>The New Arrival</span>
+        <p className="text-xl font-montserrat text-red-500">Our Summer Collection</p>
+        <h1 className="mt-10 font-palaquin text-8xl max-sm:text-[72px] max-sm:leading[82] font-bold">
+          <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">The New Arrival</span>
           <br />
-          <span>Nike</span>Shoes
+          <span className="text-red-500 inline-block mt-3">Nike</span> Shoes
         </h1>
-        <p>Discover Stylish Nike arrivals, quality comfort, and innovation for your active life</p>
+        <p className="font-montserrat text-gray-500 text-lg leading-8 mt-6 mb-14 sm:max-w-sm ">Discover Stylish Nike arrivals, quality comfort, and innovation for your active life</p>
         <Button label="Shop Now" iconURL={arrowRight} />
+
+        <div className="flex justify-start items-start w-full mt-20 flex-wrap gap-16">
+        {statistics.map((stat) => (
+          <div key={stat.label}>
+            <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
+            <p className="leading-7 fonts-montserrat text-gray-500">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+      </div>
+      
+      <div>
+        <img src={bigShoe1} alt="shoe" />
       </div>
       
     </section>
